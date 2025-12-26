@@ -22,8 +22,7 @@ javascript package. All the card types configuration have been extracted from it
 * Mir
 * Hiper
 * Hipercard
-* Troy
-* Cabal
+* Verve
 
 ## Installation
 
@@ -40,7 +39,7 @@ or add
 ```json
 ...
     "require": {
-        "jlorente/php-credit-cards": "*"
+        "ipagdevs/php-credit-cards": "*"
     }
 ```
 
@@ -52,7 +51,7 @@ You can create an instance of the validator either by using the common
 constructor or the static make method.
 
 ```php
-use Jlorente\CreditCards\CreditCardValidator;
+use IpagDevs\CreditCards\CreditCardValidator;
 
 $validator = new CreditCardValidator();
 ```

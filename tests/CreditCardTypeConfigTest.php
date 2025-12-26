@@ -1,9 +1,9 @@
 <?php
 
-namespace Jlorente\CreditCards\Tests;
+namespace IpagDevs\CreditCards\Tests;
 
 use InvalidArgumentException;
-use Jlorente\CreditCards\CreditCardTypeConfig;
+use IpagDevs\CreditCards\CreditCardTypeConfig;
 use PHPUnit\Framework\TestCase;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jlorente\CreditCards;
+namespace IpagDevs\CreditCards;
 
 use InvalidArgumentException;
 use SplQueue;
@@ -397,12 +397,12 @@ class CreditCardTypeConfig
         }
 
         $this->setNiceType($config['niceType'])
-                ->setType($config['type'])
-                ->setPatterns($config['patterns'])
-                ->setGaps($config['gaps'])
-                ->setLengths($config['lengths'])
-                ->setCode($config['code'])
-                ->setLuhnCheck($config['luhnCheck']);
+            ->setType($config['type'])
+            ->setPatterns($config['patterns'])
+            ->setGaps($config['gaps'])
+            ->setLengths($config['lengths'])
+            ->setCode($config['code'])
+            ->setLuhnCheck($config['luhnCheck']);
 
         return $this;
     }
@@ -693,5 +693,4 @@ class CreditCardTypeConfig
     {
         return !!preg_match('/^[0-9]+$/', (string) $value);
     }
-
 }

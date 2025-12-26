@@ -1,6 +1,6 @@
 <?php
 
-namespace Jlorente\CreditCards;
+namespace IpagDevs\CreditCards;
 
 use BadMethodCallException;
 use InvalidArgumentException;
@@ -94,19 +94,19 @@ class CreditCardValidator
     public static function getFullTypesList()
     {
         return [
-            self::TYPE_VISA
-            , self::TYPE_MASTERCARD
-            , self::TYPE_AMERICAN_EXPRESS
-            , self::TYPE_DINERS_CLUB
-            , self::TYPE_DISCOVER
-            , self::TYPE_JCB
-            , self::TYPE_UNIONPAY
-            , self::TYPE_MAESTRO
-            , self::TYPE_ELO
-            , self::TYPE_MIR
-            , self::TYPE_HIPER
-            , self::TYPE_HIPERCARD
-            , self::TYPE_VERVE
+            self::TYPE_VISA,
+            self::TYPE_MASTERCARD,
+            self::TYPE_AMERICAN_EXPRESS,
+            self::TYPE_DINERS_CLUB,
+            self::TYPE_DISCOVER,
+            self::TYPE_JCB,
+            self::TYPE_UNIONPAY,
+            self::TYPE_MAESTRO,
+            self::TYPE_ELO,
+            self::TYPE_MIR,
+            self::TYPE_HIPER,
+            self::TYPE_HIPERCARD,
+            self::TYPE_VERVE
         ];
     }
 
@@ -293,5 +293,4 @@ class CreditCardValidator
         $this->typesInfo = $typesInfo;
         return $this;
     }
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jlorente\CreditCards;
+namespace IpagDevs\CreditCards;
 
 /**
  * Class CreditCardTypeConfigList.

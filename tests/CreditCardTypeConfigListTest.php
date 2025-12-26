@@ -1,8 +1,8 @@
 <?php
 
-namespace Jlorente\CreditCards\Tests;
+namespace IpagDevs\CreditCards\Tests;
 
-use Jlorente\CreditCards\CreditCardTypeConfigList;
+use IpagDevs\CreditCards\CreditCardTypeConfigList;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -65,5 +65,4 @@ class CreditCardTypeConfigListTest extends TestCase
             }
         }
     }
-
 }

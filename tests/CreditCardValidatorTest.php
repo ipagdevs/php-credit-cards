@@ -1,10 +1,10 @@
 <?php
 
-namespace Jlorente\CreditCards\Tests;
+namespace IpagDevs\CreditCards\Tests;
 
 use Mockery\Adapter\Phpunit\MockeryTestCase;
-use Jlorente\CreditCards\CreditCardValidator;
-use Jlorente\CreditCards\CreditCardTypeConfig;
+use IpagDevs\CreditCards\CreditCardValidator;
+use IpagDevs\CreditCards\CreditCardTypeConfig;
 
 /**
  * Class CreditCardValidatorTest
@@ -122,7 +122,7 @@ class CreditCardValidatorTest extends MockeryTestCase
      */
     public function testCreditCardTypeConfigListGetIsCalledOnlyOnce()
     {
-        $mock = \Mockery::mock('alias:Jlorente\\CreditCards\\CreditCardTypeConfigList');
+        $mock = \Mockery::mock('alias:IpagDevs\\CreditCards\\CreditCardTypeConfigList');
 
         $mock->shouldReceive('get')->andReturn([])->once();
 
