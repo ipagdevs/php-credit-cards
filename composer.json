@@ -1,5 +1,5 @@
 {
-    "name": "ipagdevs/php-credit-cards",
+    "name": "ipagdevs/card-type-php",
     "description": "A PHP package to perform operations on debit and credit cards like format, validate brand, number and Luhn algorithm. It validates popular brands like Visa, Mastercard, American Express, etc.",
     "keywords": [
         "php",
