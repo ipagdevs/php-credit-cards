@@ -2,9 +2,9 @@
 
 namespace Jlorente\CreditCards\Tests;
 
-use Jlorente\CreditCards\CreditCardTypeConfig;
-use Jlorente\CreditCards\CreditCardValidator;
 use Mockery\Adapter\Phpunit\MockeryTestCase;
+use Jlorente\CreditCards\CreditCardValidator;
+use Jlorente\CreditCards\CreditCardTypeConfig;
 
 /**
  * Class CreditCardValidatorTest
@@ -80,19 +80,19 @@ class CreditCardValidatorTest extends MockeryTestCase
     public function testGetAllowedTypesListReturnOnlyTheTypesProvidedOnConstruction()
     {
         $validator = CreditCardValidator::make([
-                    CreditCardValidator::TYPE_VISA,
-                    CreditCardValidator::TYPE_MASTERCARD,
+            CreditCardValidator::TYPE_VISA,
+            CreditCardValidator::TYPE_MASTERCARD,
         ]);
 
         $result = $validator->getAllowedTypesList();
 
         $this->assertCount(2, $result);
         $this->assertEqualsCanonicalizing(
-                [
-                    CreditCardValidator::TYPE_VISA,
-                    CreditCardValidator::TYPE_MASTERCARD,
-                ],
-                $result
+            [
+                CreditCardValidator::TYPE_VISA,
+                CreditCardValidator::TYPE_MASTERCARD,
+            ],
+            $result
         );
     }
 
@@ -102,8 +102,8 @@ class CreditCardValidatorTest extends MockeryTestCase
     public function testGetTypesInfoReturnAnArrayOfCreditCardTypeConfigObjects()
     {
         $validator = CreditCardValidator::make([
-                    CreditCardValidator::TYPE_VISA,
-                    CreditCardValidator::TYPE_MASTERCARD,
+            CreditCardValidator::TYPE_VISA,
+            CreditCardValidator::TYPE_MASTERCARD,
         ]);
 
         $results = $validator->getTypesInfo();
@@ -138,8 +138,8 @@ class CreditCardValidatorTest extends MockeryTestCase
     public function testHasTypeInfoReturnTrueForAnExistingLoadedType()
     {
         $validator = CreditCardValidator::make([
-                    CreditCardValidator::TYPE_VISA,
-                    CreditCardValidator::TYPE_MASTERCARD,
+            CreditCardValidator::TYPE_VISA,
+            CreditCardValidator::TYPE_MASTERCARD,
         ]);
 
         $result = $validator->hasTypeInfo(CreditCardValidator::TYPE_VISA);
@@ -153,8 +153,8 @@ class CreditCardValidatorTest extends MockeryTestCase
     public function testHasTypeInfoReturnFalseForANotLoadedType()
     {
         $validator = CreditCardValidator::make([
-                    CreditCardValidator::TYPE_VISA,
-                    CreditCardValidator::TYPE_MASTERCARD,
+            CreditCardValidator::TYPE_VISA,
+            CreditCardValidator::TYPE_MASTERCARD,
         ]);
 
         $result = $validator->hasTypeInfo(CreditCardValidator::TYPE_AMERICAN_EXPRESS);
@@ -168,8 +168,8 @@ class CreditCardValidatorTest extends MockeryTestCase
     public function testGetTypeInfoReturnACreditCardTypeConfigForAnExistingLoadedType()
     {
         $validator = CreditCardValidator::make([
-                    CreditCardValidator::TYPE_VISA,
-                    CreditCardValidator::TYPE_MASTERCARD,
+            CreditCardValidator::TYPE_VISA,
+            CreditCardValidator::TYPE_MASTERCARD,
         ]);
 
         $result = $validator->getTypeInfo(CreditCardValidator::TYPE_VISA);
@@ -183,8 +183,8 @@ class CreditCardValidatorTest extends MockeryTestCase
     public function testGetTypeInfoReturnNullForANotLoadedType()
     {
         $validator = CreditCardValidator::make([
-                    CreditCardValidator::TYPE_VISA,
-                    CreditCardValidator::TYPE_MASTERCARD,
+            CreditCardValidator::TYPE_VISA,
+            CreditCardValidator::TYPE_MASTERCARD,
         ]);
 
         $result = $validator->getTypeInfo(CreditCardValidator::TYPE_AMERICAN_EXPRESS);
@@ -267,7 +267,6 @@ class CreditCardValidatorTest extends MockeryTestCase
         $this->assertTrue($validator->isValid('5555555555554444'));
         $this->assertTrue($validator->isValid('378282246310005'));
         $this->assertTrue($validator->isValid('6011111111111117'));
-        $this->assertTrue($validator->isValid('9792052565200015'));
     }
 
     /**
@@ -356,28 +355,10 @@ class CreditCardValidatorTest extends MockeryTestCase
     /**
      * @group CreditCardValidatorTest
      */
-    public function testIsHipercardDueToTheCompletionOfThePatternIsHigherThanOtherOnes() {
+    public function testIsHipercardDueToTheCompletionOfThePatternIsHigherThanOtherOnes()
+    {
         $validator = CreditCardValidator::make();
 
         $this->assertTrue($validator->isHiperCard('6062826786276634'));
-    }
-
-    /**
-     * @group CreditCardValidatorTest
-     */
-    public function testIsVisaReturnTrueForATroyCardNumber()
-    {
-        $validator = CreditCardValidator::make();
-
-        $this->assertTrue($validator->isTroy('9792052565200015'));
-    }
-    /**
-     * @group CreditCardValidatorTest
-     */
-    public function testIsCabalReturnsTrueForACabalCardNumber()
-    {
-        $validator = CreditCardValidator::make();
-
-        $this->assertTrue($validator->isCabal('5896570000000008'));
     }
 }
