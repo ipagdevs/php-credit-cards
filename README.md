@@ -39,7 +39,7 @@ or add
 ```json
 ...
     "require": {
-        "ipagdevs/php-credit-cards": "*"
+        "ipagdevs/card-type-php": "*"
     }
 ```
 
